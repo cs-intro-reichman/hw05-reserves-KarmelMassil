@@ -30,8 +30,8 @@ public class GameOfLife {
 		System.out.println(" count:" + count(board, 1, 1));
 		print(board);
 		System.out.println();
-		for (int i=1; i<board.length-1; i++) {
-			for (int j=1; j<board[0].length-1; j++) {
+		for (int i = 1; i < (board.length - 1); i++) {
+			for (int j = 1; j < (board[0].length - 1); j++) {
 				board[i][j] = cellValue(board, i, j);
 			}
 		}
@@ -93,8 +93,8 @@ public class GameOfLife {
 	// cell in the new board. Returns the new board.
 	public static int[][] evolve(int[][] board) {
 		int[][] newboard = new int[board.length][board[0].length];
-		for (int i = 1; i < (board.length-1); i++) {
-			for (int j = 1; j < (board[0].length-1); j++) {
+		for (int i = 1; i < (board.length - 1); i++) {
+			for (int j = 1; j < (board[0].length - 1); j++) {
 				newboard[i][j] = cellValue(board, i, j);
 			}
 		}
@@ -113,16 +113,16 @@ public class GameOfLife {
 	public static int cellValue(int[][] board, int i, int j) {
 		int count = count(board, i ,j);
 		if (board[i][j] == 1) {
-		if ((count == 2) || (count == 3))
-		    return 1;
-		else 
-		    return 0;
+		   if ((count == 2) || (count == 3))
+		     return 1;
+		   else 
+		     return 0;
 		}
 		else {
 			if (count == 3)
-		    return 1;
-	    else
-			return 0;
+		     return 1;
+	        else
+			 return 0;
 		}
 	}
 	
@@ -147,7 +147,7 @@ public class GameOfLife {
 		int rows = arr.length;
 		int columns = arr[2].length;
 		for (int r = 1; r < (rows - 1); r++) {
-			for (int c = 1; c < columns - 1; c++) {
+			for (int c = 1; c < (columns - 1); c++) {
 				System.out.printf("%3s" , arr[r][c]);
 			}
 			System.out.println(	);
